@@ -1,16 +1,21 @@
-const express = require('express');
+import express from 'express';
+import dotenv from 'dotenv';
+import auth from './routes/auth.js';
+import entryRoutes from './routes/entryRoutes.js';
+import cookieParser from 'cookie-parser';
+
+dotenv.config(); // Load environment variables
+
 const app = express();
-const PORT = 3000;
 
-// Middleware
-app.use(express.json());
 
-// Basic Route
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
-});
+app.use(express.json()); // Parse JSON requests
+app.use(cookieParser()); // Parse cookies
 
-// Start Server
+// Define routes
+app.use('/auth', auth);         // Authentication routes
+app.use('/entries', entryRoutes); // Entry management routes
+
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
