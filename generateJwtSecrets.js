@@ -9,3 +9,4 @@ const jwtRefreshSecret = generateSecret(64); // 64 bytes => 128 hex characters
 
 console.log(`JWT_SECRET=${jwtSecret}`);
 console.log(`JWT_REFRESH_SECRET=${jwtRefreshSecret}`);
+//

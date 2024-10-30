@@ -19,3 +19,4 @@ app.use('/entries', entryRoutes); // Entry management routes
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+//
