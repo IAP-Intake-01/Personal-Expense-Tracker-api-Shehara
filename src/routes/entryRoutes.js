@@ -65,4 +65,3 @@ router.delete('/:id', authenticateUser, async (req, res) => {
 });
 
 export default router; // Export the router
-//
